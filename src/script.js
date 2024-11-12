@@ -28,6 +28,20 @@ function calculateGrowth(e) {
     // Prevenir o comportamento padrão do formulário
     e.preventDefault();
     
+     // Verificar se todos os campos são válidos antes de continuar
+     if (!intialAmount.checkValidity() || !years.checkValidity() || !rates.checkValidity() || !compound.checkValidity()) {
+
+        Toastify({
+            text: "Please fill out all fields correctly before calculating.",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #FF0000, #FF0000)",
+            }
+          }).showToast();
+
+        return;
+    }
+
     // Limpar dados e rótulos de execuções anteriores
     data.length = 0;
     labels.length = 0;
