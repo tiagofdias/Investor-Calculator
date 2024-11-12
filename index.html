@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <section class="container">
+        <div class="calculator">
+            <div class="heading">
+                <h3>Investor Calculator</h3>
+                <small>You will be rich one day. I believe in you. Good Luck. #TrustTheProcess</small>
+            </div>
+            <form class="compound-form">
+                <div class="input-group">
+                    <label for="initialamount">Initial Amount</label>
+                    <input type="number" required id="initialamount" min="1" step="0.01" placeholder="Enter initial amount" />
+
+                </div>
+                <div class="input-group">
+                    <label for="years">Investment Years</label>
+                    <input type="number" required id="years" min="1" max="100" step="1" placeholder="Enter number of years" />
+
+                </div>
+                <div class="input-group">
+                    <label for="rates">Estimated Rates (%)</label>
+                    <input type="number" required id="rates" min="0" max="100" step="0.01" placeholder="Enter interest rate" />
+
+                </div>
+                <div class="input-group">
+                    <label for="rates">Compound Interval</label>
+                    <select id="compound">
+                        <option value="1">Annualy</option>
+                        <option value="4">Quartely</option>
+                        <option value="2">Semiannualy</option>
+                        <option value="12">Monthly</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button>Calculate</button>
+                </div>
+            </form>
+        </div>
+        <div class="results">
+            <h3 id="message"></h3>
+            <canvas id="data-set"></canvas>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="src/script.js"></script>
+</body>
+</html>
